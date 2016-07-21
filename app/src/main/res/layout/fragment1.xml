@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f0f0f0">
+
+
+    <TextView
+        android:text="状 态"
+        android:textSize="@dimen/title_size"
+        android:textColor="@color/bg_white"
+        android:gravity="center"
+        android:background="@color/first_head"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/title_height" />
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <LinearLayout
+                android:layout_marginTop="12dp"
+                android:layout_width="fill_parent"
+                android:layout_height="120dp"
+                android:background="#ffffff"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:src="@drawable/truck"
+                    android:layout_marginLeft="30dp"
+                    android:layout_gravity="center"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp" />
+                <LinearLayout
+                    android:layout_marginRight="20dp"
+                    android:orientation="vertical"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+                    <TextView
+                        android:layout_marginTop="10dp"
+                        android:text="EI   MAKER"
+                        android:textSize="32dp"
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_marginTop="10dp"
+                        android:text="石头机械科技\n   MAKER先行"
+                        android:textSize="18dp"
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent" />
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/item_1"
+                android:layout_marginTop="12dp"
+                android:layout_width="fill_parent"
+                android:layout_height="80dp"
+                android:background="#ffffff"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:src="@drawable/thermometer"
+                    android:layout_marginLeft="10dp"
+                    android:layout_gravity="center"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp" />
+
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:text="轮胎温度"
+                    android:textSize="18dp"
+                    android:gravity="center|left"
+                    android:layout_marginLeft="15dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent" />
+
+                <TextView
+                    android:id="@+id/temp"
+                    android:layout_marginTop="10dp"
+                    android:text="26℃"
+                    android:textColor="#B22222"
+                    android:textSize="18dp"
+                    android:gravity="center|left"
+                    android:layout_marginLeft="15dp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="1dp" />
+
+            <LinearLayout
+                android:id="@+id/item_2"
+                android:layout_width="fill_parent"
+                android:layout_height="80dp"
+                android:background="#ffffff"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:src="@drawable/water"
+                    android:layout_marginLeft="10dp"
+                    android:layout_gravity="center"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp" />
+
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:text="水箱水位"
+                    android:textSize="18dp"
+                    android:gravity="center|left"
+                    android:layout_marginLeft="15dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent" />
+
+                <TextView
+                    android:id="@+id/level"
+                    android:layout_marginTop="10dp"
+                    android:text="81cm"
+                    android:textColor="#4169E1"
+                    android:textSize="18dp"
+                    android:gravity="center|left"
+                    android:layout_marginLeft="15dp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="1dp" />
+
+            <LinearLayout
+                android:id="@+id/item_3"
+                android:layout_width="fill_parent"
+                android:layout_height="80dp"
+                android:background="#ffffff"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:src="@drawable/time"
+                    android:layout_marginLeft="10dp"
+                    android:layout_gravity="center"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp" />
+
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:text="行驶时间"
+                    android:textSize="18dp"
+                    android:gravity="center|left"
+                    android:layout_marginLeft="15dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent" />
+
+                <TextView
+                    android:id="@+id/time"
+                    android:layout_marginTop="10dp"
+                    android:text="4.75H"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18dp"
+                    android:gravity="center|left"
+                    android:layout_marginLeft="15dp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent" />
+
+            </LinearLayout>
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="1dp" />
+
+            <LinearLayout
+                android:id="@+id/item_4"
+                android:layout_width="fill_parent"
+                android:layout_height="80dp"
+                android:background="#ffffff"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:src="@drawable/state"
+                    android:layout_marginLeft="10dp"
+                    android:layout_gravity="center"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp" />
+
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:text="安全工作状态"
+                    android:textSize="18dp"
+                    android:gravity="center|left"
+                    android:layout_marginLeft="15dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent" />
+
+                <TextView
+                    android:id="@+id/state"
+                    android:layout_marginTop="10dp"
+                    android:text="正常"
+                    android:textSize="18dp"
+                    android:textColor="#FF8C00"
+                    android:gravity="center|left"
+                    android:layout_marginLeft="15dp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+
+</LinearLayout>
