@@ -1,14 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:background="@color/bg_white">
+
 
     <TextView
-        android:text="石\n头\n科\n技\n有\n限\n公\n司"
+        android:text="石\n头\n机\n械\n科\n技\n有\n限\n公\n司"
         android:textColor="@color/colorPrimary"
         android:textSize="40dp"
         android:gravity="center"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent" />
+    <!--<ImageView-->
+        <!--android:src="@drawable/cover"-->
+        <!--android:layout_width="300dp"-->
+        <!--android:layout_height="301dp" />-->
+
+
 
 </LinearLayout>

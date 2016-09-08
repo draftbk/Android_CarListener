@@ -107,12 +107,12 @@ public class MyFragment1 extends Fragment implements View.OnClickListener {
                     textTemp.setText(temp+"℃");
                     int level_true= 130-Integer.parseInt(level);
                     int temp_true=Integer.parseInt(temp);
-                    String yuString="水位阈值: "+border.getInt("level",110)+" cm\\n温度阈值: "+border.getInt("temp",70)+" ℃";
+                    String yuString="水位阈值: "+border.getInt("level",110)+" cm\n温度阈值: "+border.getInt("temp",70)+" ℃";
                     textYuZhi.setText(yuString);
+                    textLevel.setText(level_true+"CM");
                     if (level_true<border.getInt("level",110)){
                         textState.setText("水位过低");
-
-                        textLevel.setText(textLevel.getText().toString()+"(过低)");
+                        textLevel.setText(level_true+"CM"+"(水位过低)");
                     }
                     if (temp_true>border.getInt("temp",70)){
                         textState.setText("温度过高");
@@ -121,7 +121,6 @@ public class MyFragment1 extends Fragment implements View.OnClickListener {
                         textState.setText("正常");
                         textLevel.setText(level_true+"CM");
                     }
-                    textLevel.setText(level_true+"CM");
                     int time= Integer.valueOf(level_true)/7;
                     String t= String.valueOf(time);
                     textTime.setText(t+" H");
