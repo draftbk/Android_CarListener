@@ -311,6 +311,11 @@ public class MyFragment3 extends Fragment implements View.OnClickListener {
                         Log.d("test2", "up[5]" + up[5]);
                         os.write(up);
                         Log.d("test2", "eeeeee");
+                        SharedPreferences.Editor editor = context.getSharedPreferences("border", Context.MODE_PRIVATE).edit();
+                        editor.putInt("level",level);
+                        editor.putInt("temp",temp);
+                        editor.commit();
+
                     } catch (IOException e) {
                         // TODO Auto-generated catch block
                         e.printStackTrace();

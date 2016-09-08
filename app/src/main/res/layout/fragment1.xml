@@ -49,8 +49,9 @@
                         android:layout_height="wrap_content" />
 
                     <TextView
+                        android:id="@+id/yuzhi"
                         android:layout_marginTop="10dp"
-                        android:text="石头机械科技\n   MAKER先行"
+                        android:text="水位阈值: 110 cm\n温度阈值: 70 ℃"
                         android:textSize="18dp"
                         android:layout_gravity="center"
                         android:layout_width="wrap_content"
