@@ -111,6 +111,7 @@ public class MyFragment1 extends Fragment implements View.OnClickListener {
                     textYuZhi.setText(yuString);
                     if (level_true<border.getInt("level",110)){
                         textState.setText("水位过低");
+
                         textLevel.setText(textLevel.getText().toString()+"(过低)");
                     }
                     if (temp_true>border.getInt("temp",70)){
