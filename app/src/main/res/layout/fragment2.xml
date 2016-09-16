@@ -4,7 +4,6 @@
 android:orientation="vertical" android:layout_width="match_parent"
 android:layout_height="match_parent"
 android:background="#f0f0f0">
-
     <TextView
         android:text="数 据"
         android:textSize="@dimen/title_size"
@@ -14,33 +13,70 @@ android:background="#f0f0f0">
         android:layout_width="fill_parent"
         android:layout_height="@dimen/title_height" />
 
-    <TextView
-        android:text="   工作状态折线图"
-        android:textSize="20dp"
-        android:layout_marginBottom="15dp"
-        android:layout_marginTop="30dp"
-        android:textColor="@color/colorPrimary"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content" />
-
-    <com.github.mikephil.charting.charts.LineChart
-
-        android:id="@+id/spread_line_chart"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_gravity="center"/>
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <com.github.mikephil.charting.charts.LineChart
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:id="@+id/spread_line_chart2"
-        android:layout_marginTop="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_gravity="center"/>
-    
+
+            <LinearLayout
+                android:weightSum="2"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <TextView
+                    android:text="   工作状态折线图"
+                    android:textSize="20dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginTop="15dp"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView2" />
+
+                <TextView
+                    android:text="刷新"
+                    android:textSize="20dp"
+                    android:gravity="center"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginTop="15dp"
+                    android:textColor="@color/bg_black"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/text_refresh" />
+            </LinearLayout>
+
+
+
+            <com.github.mikephil.charting.charts.LineChart
+
+                android:id="@+id/spread_line_chart"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_gravity="center"/>
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:id="@+id/spread_line_chart2"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_gravity="center"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+
 
 
 </LinearLayout>

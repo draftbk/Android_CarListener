@@ -7,7 +7,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.slf.stone_car.Bean.Data;
 import com.example.slf.stone_car.R;
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.charts.PieChart;
@@ -17,12 +20,20 @@ import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import cn.bmob.v3.Bmob;
+import cn.bmob.v3.BmobQuery;
+import cn.bmob.v3.exception.BmobException;
+import cn.bmob.v3.listener.FindListener;
 
 
 /**
  * Created by Jay on 2015/8/28 0028.
  */
-public class MyFragment2 extends Fragment {
+public class MyFragment2 extends Fragment implements View.OnClickListener {
+    private List<Data> dataArrayList;
+    private TextView textRefresh;
 
     public MyFragment2() {
     }
@@ -33,12 +44,44 @@ public class MyFragment2 extends Fragment {
         View view = inflater.inflate(R.layout.fragment2,container,false);
         mLineChart= (LineChart) view.findViewById(R.id.spread_line_chart);
         mLineChart2= (LineChart) view.findViewById(R.id.spread_line_chart2);
-        LineData mLineData=getLineData(10,50,"温度变化图");
-        showChart(mLineChart, mLineData, Color.rgb(114, 188, 223));
-        LineData mLineData2=getLineData(10,50,"水量变化图");
-        showChart(mLineChart2, mLineData2, Color.rgb(114, 188, 223));
-
+        textRefresh= (TextView) view.findViewById(R.id.text_refresh);
+        textRefresh.setOnClickListener(this);
+        dataArrayList=new ArrayList<Data>();
+        getList();
         return view;
+    }
+
+    private void getList() {
+        //初始化bmob
+        Bmob.initialize(getContext(), "e9b3f89db94b9b215c686e690ffe7bb7");
+        BmobQuery<Data> query = new BmobQuery<Data>();
+//返回50条数据，如果不加上这条语句，默认返回10条数据
+        query.setLimit(10);
+        //这...竟然是负的
+        query.order("-updatedAt");
+//执行查询方法
+        query.findObjects(getContext(),new FindListener<Data>() {
+            @Override
+            public void onSuccess(List<Data> list) {
+                dataArrayList=list;
+                for (Data date : list) {
+                    Log.d("test","date.getLevel().."+date.getLevel());
+                    Log.d("test","date.getTemp().."+date.getTemp());
+                    Log.d("test","date.getCreatedAt().."+date.getCreatedAt());
+                }
+                LineData mLineData=getLineData(10,50,"温度变化图");
+                showChart(mLineChart, mLineData, Color.rgb(114, 188, 223));
+                LineData mLineData2=getLineData(10,50,"水量变化图");
+                showChart(mLineChart2, mLineData2, Color.rgb(114, 188, 223));
+            }
+
+            @Override
+            public void onError(int i, String s) {
+                Toast.makeText(getContext(),"获取数据失败",Toast.LENGTH_SHORT).show();
+            }
+
+
+        });
     }
 
     /**
@@ -49,6 +92,7 @@ public class MyFragment2 extends Fragment {
      */
     private LineData getLineData(int count, float range,String name) {
         ArrayList<String> xValues = new ArrayList<String>();
+
         for (int i = 0; i < count; i++) {
             // x轴显示的数据，这里默认使用数字下标显示
             xValues.add("" + i);
@@ -57,7 +101,12 @@ public class MyFragment2 extends Fragment {
         // y轴的数据
         ArrayList<Entry> yValues = new ArrayList<Entry>();
         for (int i = 0; i < count; i++) {
-            float value = (float) (Math.random() * range) + 3;
+            float value=0.0f;
+            if (name.equals("温度变化图")){
+                value= (float)dataArrayList.get(i).getTemp() ;
+            }else if (name.equals("水量变化图")){
+                value= (float)dataArrayList.get(i).getLevel() ;
+            }
             yValues.add(new Entry(value, i));
         }
 
@@ -122,5 +171,14 @@ public class MyFragment2 extends Fragment {
 //      mLegend.setTypeface(mTf);// 字体
 
         lineChart.animateX(2500); // 立即执行的动画,x轴
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.text_refresh:
+                getList();
+                break;
+        }
     }
 }
