@@ -167,6 +167,7 @@ public class MyFragment2 extends Fragment implements View.OnClickListener {
         // mLegend.setPosition(LegendPosition.LEFT_OF_CHART);
         mLegend.setForm(Legend.LegendForm.CIRCLE);// 样式
         mLegend.setFormSize(6f);// 字体
+
         mLegend.setTextColor(Color.WHITE);// 颜色
 //      mLegend.setTypeface(mTf);// 字体
 
