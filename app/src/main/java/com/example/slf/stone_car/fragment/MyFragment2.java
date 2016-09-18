@@ -105,7 +105,7 @@ public class MyFragment2 extends Fragment implements View.OnClickListener {
             if (name.equals("温度变化图")){
                 value= (float)dataArrayList.get(i).getTemp() ;
             }else if (name.equals("水量变化图")){
-                value= (float)dataArrayList.get(i).getLevel() ;
+                value= 130-(float)dataArrayList.get(i).getLevel() ;
             }
             yValues.add(new Entry(value, i));
         }
