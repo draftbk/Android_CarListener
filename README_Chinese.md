@@ -4,7 +4,7 @@
  
 ##### 手机以及手表端
 
- <img src="https://github.com/draftbk/Android_CarListener/blob/master/car_listener/car_listener_1.png?raw=true" width="60%" height="60%"> 
+ <img src="https://github.com/draftbk/Android_CarListener/blob/master/car_listener/car_listener_1.png?raw=true" width="70%" height="70%"> 
  
 ##### 硬件（红外模块，超声波模块）
 
